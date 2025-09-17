@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form [formGroup]="profileForm">
+  <label for="nom">Nom: </label>
+  <input id="lastname" type="text" formControlName="nom" required>
+
+  <label for="prenom">Prénom: </label>
+  <input id="firstname" type="text" formControlName="prenom" required>
+
+  <label for="age">Age: </label>
+  <input id="age" type="number" formControlName="age">
+
+  <label for="hide" >Hide: </label>
+  <input type="checkbox" (change)="onToggleHide($event)">
+
+  <label for="email" [hidden]="isChecked">Email: </label>
+  <input id="email" type="email" formControlName="email" [hidden]="isChecked" required>
+
+  <label for="commentaire">Commentaire: </label>
+  <input id="comment" type="text" formControlName="commentaire" required>
+
+  <button type="submit">SEND FORM</button>
+
+  <pre>{{ profileForm.value | json }}</pre>
+</form>
