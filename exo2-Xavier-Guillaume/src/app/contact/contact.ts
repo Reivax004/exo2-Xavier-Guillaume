@@ -19,7 +19,6 @@ export class Contact {
   public profileForm = new FormGroup({
     firstname: new FormControl(''),
     lastname: new FormControl(''),
-    //hide: new FormControl(false),
     email: new FormControl('', Validators.email),
     age: new FormControl(''),
     comment: new FormControl(''),
@@ -27,7 +26,17 @@ export class Contact {
   onToggleHide(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     this.isChecked = checkbox.checked;
-  }
 
+    const emailControl = this.profileForm.get('email');
+
+    if (this.isChecked) {
+      emailControl?.reset();
+      emailControl?.clearValidators();
+      emailControl?.updateValueAndValidity();
+    } else {
+      emailControl?.setValidators([Validators.required, Validators.email]);
+      emailControl?.updateValueAndValidity();
+    }
+  }
 
 }

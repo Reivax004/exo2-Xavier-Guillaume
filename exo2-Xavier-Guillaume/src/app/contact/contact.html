@@ -1,31 +1,38 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<form [formGroup]="profileForm" class="container mt-4" >
+  <div class="form-group mb-3">
+    <label for="lastname" class="form-label">Nom :</label>
+    <input id="lastname" type="text" class="form-control" formControlName="nom" required>
+  </div>
 
-<form [formGroup]="profileForm">
-  <label for="nom">Nom: </label>
-  <input id="lastname" type="text" formControlName="nom" required>
+  <div class="form-group mb-3">
+    <label for="firstname" class="form-label">Prénom :</label>
+    <input id="firstname" type="text" class="form-control" formControlName="prenom" required>
+  </div>
 
-  <label for="prenom">Prénom: </label>
-  <input id="firstname" type="text" formControlName="prenom" required>
+  <div class="form-group mb-3">
+    <label for="age" class="form-label">Âge :</label>
+    <input id="age" type="number" class="form-control" formControlName="age">
+  </div>
 
-  <label for="age">Age: </label>
-  <input id="age" type="number" formControlName="age">
+  <div class="form-check mb-3">
+    <input id="hide" type="checkbox" class="form-check-input" (change)="onToggleHide($event)">
+    <label for="hide" class="form-check-label">Hide email</label>
+  </div>
 
-  <label for="hide" >Hide: </label>
-  <input type="checkbox" (change)="onToggleHide($event)">
+  @if (!isChecked) {
+    <div class="form-group mb-3">
+      <label for="email" class="form-label">Email :</label>
+      <input id="email" type="email" class="form-control" formControlName="email">
+    </div>
+  }
 
-  <label for="email" [hidden]="isChecked">Email: </label>
-  <input id="email" type="email" formControlName="email" [hidden]="isChecked" required>
+  <div class="form-group mb-3">
+    <label for="comment" class="form-label">Commentaire :</label>
+    <textarea id="comment" class="form-control" formControlName="commentaire" rows="3" required></textarea>
+  </div>
 
-  <label for="commentaire">Commentaire: </label>
-  <input id="comment" type="text" formControlName="commentaire" required>
-
-  <button type="submit">SEND FORM</button>
-
-  <pre>{{ profileForm.value | json }}</pre>
+  <button type="submit" class="btn btn-primary w-100" [disabled]="!profileForm.valid">
+    SEND FORM
+  </button>
 </form>
+
