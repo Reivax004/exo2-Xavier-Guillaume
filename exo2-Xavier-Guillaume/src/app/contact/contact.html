@@ -1,12 +1,12 @@
 <form [formGroup]="profileForm" class="container mt-4" >
   <div class="form-group mb-3">
     <label for="lastname" class="form-label">Nom :</label>
-    <input id="lastname" type="text" class="form-control" formControlName="nom" required>
+    <input id="lastname" type="text" class="form-control" formControlName="lastname">
   </div>
 
   <div class="form-group mb-3">
     <label for="firstname" class="form-label">Prénom :</label>
-    <input id="firstname" type="text" class="form-control" formControlName="prenom" required>
+    <input id="firstname" type="text" class="form-control" formControlName="firstname">
   </div>
 
   <div class="form-group mb-3">
@@ -19,7 +19,7 @@
     <label for="hide" class="form-check-label">Hide email</label>
   </div>
 
-  @if (!isChecked) {
+  @if (isChecked) {
     <div class="form-group mb-3">
       <label for="email" class="form-label">Email :</label>
       <input id="email" type="email" class="form-control" formControlName="email">
@@ -28,11 +28,14 @@
 
   <div class="form-group mb-3">
     <label for="comment" class="form-label">Commentaire :</label>
-    <textarea id="comment" class="form-control" formControlName="commentaire" rows="3" required></textarea>
+    <textarea id="comment" class="form-control" formControlName="comment" rows="3"></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary w-100" [disabled]="!profileForm.valid">
-    SEND FORM
+    ENVOYER
   </button>
+  @if(profileForm.valid) {
+    {{"Formulaire valide"}}
+  }
 </form>
 

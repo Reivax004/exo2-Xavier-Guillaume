@@ -16,13 +16,14 @@ export class Contact {
 
   public isChecked = false;
 
-  public profileForm = new FormGroup({
-    firstname: new FormControl(''),
-    lastname: new FormControl(''),
-    email: new FormControl('', Validators.email),
+  public profileForm: FormGroup = new FormGroup({
+    firstname: new FormControl('', Validators.required),
+    lastname: new FormControl('', Validators.required),
     age: new FormControl(''),
-    comment: new FormControl(''),
+    comment: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
+
   onToggleHide(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     this.isChecked = checkbox.checked;
