@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {JsonPipe} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
-import {Contactdata} from '../contactdata';
+import {Contactdata} from '../service/contactdata';
 
 @Component({
   selector: 'app-contact',
   imports: [
     ReactiveFormsModule,
-    JsonPipe,
     FormsModule,
     RouterLink
   ],
@@ -17,7 +15,7 @@ import {Contactdata} from '../contactdata';
 })
 export class Contact {
 
-  public isChecked = false;
+  public isChecked : boolean = false;
 
   public contactForm: FormGroup = new FormGroup({
     firstname: new FormControl('', Validators.required),
@@ -27,7 +25,7 @@ export class Contact {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  onToggleHide(event: Event) {
+  clickToHide(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     this.isChecked = checkbox.checked;
 
