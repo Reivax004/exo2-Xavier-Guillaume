@@ -1,5 +1,4 @@
 <div class="container-fluid pt-4 spiderman-bg">
-  <!-- Boutons en style comics -->
   <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
     @for (film of listFors; track film.id) {
       <button
@@ -11,7 +10,6 @@
     }
   </div>
 
-  <!-- Bloc film sélectionné -->
   <div class="d-flex justify-content-center">
     @if (selectedFilm) {
       <div class="spiderman-bubble text-center p-4">

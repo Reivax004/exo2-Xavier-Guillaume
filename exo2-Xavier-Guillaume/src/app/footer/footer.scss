@@ -1,8 +1,33 @@
-footer{
+.spiderman-footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 7vh;
+  height: 10vh;
   width: 100%;
-  text-align: right;
+  text-align: center;
+  background-color: #e62429;
+  border-top: 4px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.7) 0 1px, transparent 1px 10px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.7) 0 1px, transparent 1px 10px),
+    radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 10px);
+  background-blend-mode: overlay;
+}
+
+.spiderman-footer .nav-link {
+  font-family: Impact, 'Arial Black', sans-serif;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-shadow: 2px 2px 0 #000;
+  transition: transform .15s ease, color .15s ease;
+}
+
+.spiderman-footer .nav-link:hover,
+.spiderman-footer .nav-link.active-link {
+  color: #ffe600 !important;
+  transform: translateY(-2px);
 }
