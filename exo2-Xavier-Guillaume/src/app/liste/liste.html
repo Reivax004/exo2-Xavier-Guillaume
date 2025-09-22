@@ -11,7 +11,7 @@
   </div>
 
   <div class="d-flex justify-content-center">
-    @if (selectedFilm) {
+    @if (selectedFilm.id !== 0) {
       <div class="spiderman-bubble text-center p-4">
         <h2 class="spiderman-title mb-3">{{ selectedFilm.name }}</h2>
         <img [src]="selectedFilm.affiche" alt="Affiche du film" class="img-fluid poster mx-auto">

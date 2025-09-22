@@ -11,13 +11,10 @@ import {Film, FILMS} from '../models/film';
 export class Liste {
   public listFors: Film[] = FILMS;
 
-  selectedFilm: any = null;
+  public selectedFilm: Film = {id: 0, name: '', affiche: ''};
 
-  selectFilm(film: any) {
+  public selectFilm(film: Film) {
     this.selectedFilm = film;
   }
-
-
-
 }
 

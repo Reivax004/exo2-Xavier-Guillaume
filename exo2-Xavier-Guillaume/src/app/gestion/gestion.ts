@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Contactdata} from '../service/contactdata';
+import {Contactdataservice} from '../service/contactdataservice';
 import {Formulaireinterface} from '../models/formulaireinterface';
 import {Error404} from '../error404/error404';
 
@@ -13,11 +13,11 @@ import {Error404} from '../error404/error404';
 })
 export class Gestion {
 
-  constructor(private contactDataService: Contactdata) {}
+  public constructor(private contactDataService: Contactdataservice) {}
 
-  contactData: Formulaireinterface | null = null;
+  public contactData: Formulaireinterface | null = null;
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.contactData = this.contactDataService.getFormData();
   }
 

@@ -4,14 +4,14 @@ import {Formulaireinterface} from '../models/formulaireinterface';
 @Injectable({
   providedIn: 'root'
 })
-export class Contactdata {
+export class Contactdataservice {
 
   public contactData : Formulaireinterface | null = null;
 
-  setFormData(contactData: Formulaireinterface) {
+  public setFormData(contactData: Formulaireinterface) {
     this.contactData = contactData;
   }
-  getFormData() {
+  public getFormData() {
     return this.contactData;
   }
 }

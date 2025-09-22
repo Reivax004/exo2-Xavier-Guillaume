@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Contactdata} from '../service/contactdata';
+import {Contactdataservice} from '../service/contactdataservice';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -25,7 +25,7 @@ export class Contact {
     email: new FormControl('', [Validators.required, Validators.email]),
   });
 
-  clickToHide(event: Event) {
+  public clickToHide(event: Event) {
     const checkbox = event.target as HTMLInputElement;
     this.isChecked = checkbox.checked;
 
@@ -40,9 +40,9 @@ export class Contact {
       emailControl?.updateValueAndValidity();
     }
   }
-  constructor(private contactDataService: Contactdata) {}
+  public constructor(private contactDataService: Contactdataservice) {}
 
-  onSubmit(): void {
+  public onSubmit(): void {
     alert("Formulaire valide");
     this.contactDataService.setFormData(this.contactForm.value);
   }
