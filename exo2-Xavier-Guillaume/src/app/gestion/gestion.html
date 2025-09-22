@@ -2,38 +2,38 @@
   <app-error404></app-error404>
 }
 @else{
-  <div class="container mt-4">
-    <h2 class="mb-4">Récapitulatif du formulaire</h2>
+  <div class="container mt-4 ">
+    <h2 class="mb-4 text-center text-spiderman">🕷️ Récapitulatif du formulaire</h2>
 
-    <div class="card">
+    <div class="card spiderman-card shadow">
       <div class="card-body">
 
-        <div class="row mb-2">
-          <div class="col-sm-4 fw-bold">Prénom :</div>
+        <div class="row mb-3">
+          <div class="col-sm-4 fw-bold text-spiderman">Prénom :</div>
           <div class="col-sm-8">{{ contactData.firstname || '—' }}</div>
         </div>
 
-        <div class="row mb-2">
-          <div class="col-sm-4 fw-bold">Nom :</div>
+        <div class="row mb-3">
+          <div class="col-sm-4 fw-bold text-spiderman">Nom :</div>
           <div class="col-sm-8">{{ contactData.lastname || '—' }}</div>
         </div>
 
-        <div class="row mb-2">
-          <div class="col-sm-4 fw-bold">Âge :</div>
+        <div class="row mb-3">
+          <div class="col-sm-4 fw-bold text-spiderman">Âge :</div>
           <div class="col-sm-8">{{ contactData.age || '—' }}</div>
         </div>
 
-        <div class="row mb-2">
-          <div class="col-sm-4 fw-bold">Email :</div>
+        <div class="row mb-3">
+          <div class="col-sm-4 fw-bold text-spiderman">Email :</div>
           <div class="col-sm-8">{{ contactData.email || '—' }}</div>
         </div>
 
-        <div class="row mb-2">
-          <div class="col-sm-4 fw-bold">Commentaire :</div>
+        <div class="row mb-3">
+          <div class="col-sm-4 fw-bold text-spiderman">Commentaire :</div>
           <div class="col-sm-8">{{ contactData.comment || '—' }}</div>
         </div>
+
       </div>
     </div>
   </div>
 }
-
