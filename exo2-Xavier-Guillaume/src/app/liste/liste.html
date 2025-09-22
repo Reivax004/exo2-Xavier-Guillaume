@@ -1,5 +1,9 @@
-@for (listFor of listFors; track listFor) {
-  <button>  {{ listFor.name }}</button>
- <!-- <img [src]="listFor.affiche" alt="image du film"> <
- -->
+@for (film of listFors; track film) {
+   <button (click)="selectFilm(film)">
+    {{ film.name }}
+   </button>
+}
+@if (selectedFilm) {
+  {{ selectedFilm.name}}
+  <img [src]="selectedFilm.affiche" alt="image du film">
 }
