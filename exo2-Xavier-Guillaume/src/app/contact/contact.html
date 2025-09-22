@@ -37,7 +37,7 @@
       <textarea id="comment" class="form-control" formControlName="comment" rows="3"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary w-100" (click)="onSubmit()" [disabled]="!contactForm.valid">
+    <button type="submit" routerLink="acceuil" class="btn btn-primary w-100" (click)="onSubmit()" [disabled]="!contactForm.valid">
       ENVOYER
     </button>
 

@@ -4,26 +4,23 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="acceuil">Accueil</a>
+          <a class="nav-link"
+             aria-current="page"
+             routerLink="acceuil"
+             routerLinkActive="active-link">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="gestion">Gestion</a>
+          <a class="nav-link"
+             routerLink="gestion"
+             routerLinkActive="active-link">Gestion</a>
         </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" routerLink="liste" role="button" aria-expanded="false">
-          Liste
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/liste', 1]">Spiderman</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/liste', 2]">Spiderman 2</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/liste', 3]">Spiderman 3</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/liste', 4]">New Generation</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/liste', 5]">Across the Spider-Verse</a></li>
-
-        </ul>
+        <li class="nav-item">
+          <a class="nav-link"
+             routerLink="liste"
+             routerLinkActive="active-link">Liste</a>
         </li>
-
       </ul>
+
     </div>
   </div>
 </nav>

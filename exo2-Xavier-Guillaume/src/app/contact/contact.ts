@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Router, RouterLink} from '@angular/router';
 import {Contactdata} from '../service/contactdata';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -40,11 +40,10 @@ export class Contact {
       emailControl?.updateValueAndValidity();
     }
   }
-  constructor(private contactDataService: Contactdata, private router: Router) {}
+  constructor(private contactDataService: Contactdata) {}
 
   onSubmit(): void {
     alert("Formulaire valide");
     this.contactDataService.setFormData(this.contactForm.value);
   }
-
 }

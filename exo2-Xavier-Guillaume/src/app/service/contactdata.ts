@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Formulaireinterface} from '../modele/formulaireinterface';
+import {Formulaireinterface} from '../models/formulaireinterface';
 
 @Injectable({
   providedIn: 'root'
