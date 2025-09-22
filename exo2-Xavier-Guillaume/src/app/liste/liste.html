@@ -1,9 +1,23 @@
-@for (film of listFors; track film) {
-   <button (click)="selectFilm(film)">
-    {{ film.name }}
-   </button>
-}
-@if (selectedFilm) {
-  {{ selectedFilm.name}}
-  <img [src]="selectedFilm.affiche" alt="image du film">
-}
+<div class="container-fluid pt-4 spiderman-bg">
+  <!-- Boutons en style comics -->
+  <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+    @for (film of listFors; track film.id) {
+      <button
+        type="button"
+        class="btn spiderman-btn"
+        (click)="selectFilm(film)">
+        {{ film.name }}
+      </button>
+    }
+  </div>
+
+  <!-- Bloc film sélectionné -->
+  <div class="d-flex justify-content-center">
+    @if (selectedFilm) {
+      <div class="spiderman-bubble text-center p-4">
+        <h2 class="spiderman-title mb-3">{{ selectedFilm.name }}</h2>
+        <img [src]="selectedFilm.affiche" alt="Affiche du film" class="img-fluid poster mx-auto">
+      </div>
+    }
+  </div>
+</div>
