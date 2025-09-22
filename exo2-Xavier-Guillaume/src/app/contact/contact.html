@@ -1,41 +1,32 @@
-<form [formGroup]="profileForm" class="container mt-4" >
+<form [formGroup]="contactForm" class="container mt-4" >
   <div class="form-group mb-3">
     <label for="lastname" class="form-label">Nom :</label>
     <input id="lastname" type="text" class="form-control" formControlName="lastname">
   </div>
-
   <div class="form-group mb-3">
     <label for="firstname" class="form-label">Prénom :</label>
     <input id="firstname" type="text" class="form-control" formControlName="firstname">
   </div>
-
   <div class="form-group mb-3">
     <label for="age" class="form-label">Âge :</label>
     <input id="age" type="number" class="form-control" formControlName="age">
   </div>
-
   <div class="form-check mb-3">
     <input id="hide" type="checkbox" class="form-check-input" (change)="onToggleHide($event)">
     <label for="hide" class="form-check-label">Hide email</label>
   </div>
-
-  @if (isChecked) {
+  @if (!isChecked) {
     <div class="form-group mb-3">
       <label for="email" class="form-label">Email :</label>
       <input id="email" type="email" class="form-control" formControlName="email">
     </div>
   }
-
   <div class="form-group mb-3">
     <label for="comment" class="form-label">Commentaire :</label>
     <textarea id="comment" class="form-control" formControlName="comment" rows="3"></textarea>
   </div>
-
-  <button type="submit" class="btn btn-primary w-100" [disabled]="!profileForm.valid">
+  <button routerLink="accueil" type="submit" class="btn btn-primary w-100"  (click)="onSubmit()" [disabled]="!contactForm.valid">
     ENVOYER
   </button>
-  @if(profileForm.valid) {
-    {{"Formulaire valide"}}
-  }
 </form>
 

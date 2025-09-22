@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {JsonPipe} from '@angular/common';
+import {Router, RouterLink} from '@angular/router';
+import {Contactdata} from '../contactdata';
 
 @Component({
   selector: 'app-contact',
   imports: [
     ReactiveFormsModule,
     JsonPipe,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
@@ -16,7 +19,7 @@ export class Contact {
 
   public isChecked = false;
 
-  public profileForm: FormGroup = new FormGroup({
+  public contactForm: FormGroup = new FormGroup({
     firstname: new FormControl('', Validators.required),
     lastname: new FormControl('', Validators.required),
     age: new FormControl(''),
@@ -28,7 +31,7 @@ export class Contact {
     const checkbox = event.target as HTMLInputElement;
     this.isChecked = checkbox.checked;
 
-    const emailControl = this.profileForm.get('email');
+    const emailControl = this.contactForm.get('email');
 
     if (this.isChecked) {
       emailControl?.reset();
@@ -38,6 +41,12 @@ export class Contact {
       emailControl?.setValidators([Validators.required, Validators.email]);
       emailControl?.updateValueAndValidity();
     }
+  }
+  constructor(private contactDataService: Contactdata, private router: Router) {}
+
+  onSubmit(): void {
+    alert("Formulaire valide");
+    this.contactDataService.setFormData(this.contactForm.value);
   }
 
 }
