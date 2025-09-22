@@ -10,17 +10,19 @@
           <a class="nav-link" routerLink="gestion">Gestion</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="liste" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Liste
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Spider-Man</a></li>
-            <li><a class="dropdown-item" href="#">Barbecue Apocalypse</a></li>
-            <li><a class="dropdown-item" href="#">Jacky contre les Fiscards</a></li>
-            <li><a class="dropdown-item" href="#">Camping 3000 : le retour du rosé</a></li>
-            <li><a class="dropdown-item" href="#">Permis de Chasser</a></li>
-          </ul>
+        <a class="nav-link dropdown-toggle" routerLink="liste" role="button" aria-expanded="false">
+          Liste
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/liste', 1]">Spiderman</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/liste', 2]">Spiderman 2</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/liste', 3]">Spiderman 3</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/liste', 4]">New Generation</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/liste', 5]">Across the Spider-Verse</a></li>
+
+        </ul>
         </li>
+
       </ul>
     </div>
   </div>

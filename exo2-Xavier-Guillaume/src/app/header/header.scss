@@ -1,9 +1,19 @@
-header{
+header {
   position: fixed;
   top: 0;
   left: 0;
   height: 5vh;
   width: 100%;
   text-align: center;
+  z-index: 1100;
 }
 
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+  display: block;
+  position: absolute;
+}
+
+.navbar, .container-fluid {
+  overflow: visible;
+}
