@@ -1,39 +1,5 @@
-<div class="container" style="margin-top: 5vh;">
-  <!-- Tabs horizontaux centrés -->
-  <ul class="nav nav-tabs d-flex justify-content-center" id="filmTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab">Spiderman</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab">Spiderman 2</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab">Spiderman 3</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab">New Generation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tab5" type="button" role="tab">Across the Spider-Verse</button>
-    </li>
-  </ul>
-
-  <!-- Contenu des tabs -->
-  <div class="tab-content mt-3" id="filmTabContent">
-    <div class="tab-pane fade" id="tab1" role="tabpanel">
-      Spiderman 1
-    </div>
-    <div class="tab-pane fade" id="tab2" role="tabpanel">
-      Spiderman 2
-    </div>
-    <div class="tab-pane fade" id="tab3" role="tabpanel">
-      Spiderman 3
-    </div>
-    <div class="tab-pane fade" id="tab4" role="tabpanel">
-      New Generation
-    </div>
-    <div class="tab-pane fade" id="tab5" role="tabpanel">
-      Across the Spider-Verse
-    </div>
-  </div>
-</div>
+@for (listFor of listFors; track listFor) {
+  <button>  {{ listFor.name }}</button>
+ <!-- <img [src]="listFor.affiche" alt="image du film"> <
+ -->
+}
