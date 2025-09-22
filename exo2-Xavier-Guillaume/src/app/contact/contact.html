@@ -1,44 +1,48 @@
 <div class="container mt-4 d-flex justify-content-center">
-  <form [formGroup]="contactForm" class="w-50">
+  <form [formGroup]="contactForm" class="w-50 p-4 rounded shadow spiderman-form">
 
     <div class="form-group mb-4 text-center">
-      <label for="lastname" class="form-label fs-2 fw-bold">Formulaire de contact</label>
+      <label for="lastname" class="form-label fs-2 fw-bold text-spiderman">
+        🕷️ Formulaire de contact
+      </label>
     </div>
 
     <div class="form-group mb-3 text-start">
-      <label for="lastname" class="form-label">Nom :</label>
-      <input id="lastname" type="text" class="form-control" formControlName="lastname">
+      <label for="lastname" class="form-label text-spiderman">Nom :</label>
+      <input id="lastname" type="text" class="form-control border-spiderman" formControlName="lastname">
     </div>
 
     <div class="form-group mb-3 text-start">
-      <label for="firstname" class="form-label">Prénom :</label>
-      <input id="firstname" type="text" class="form-control" formControlName="firstname">
+      <label for="firstname" class="form-label text-spiderman">Prénom :</label>
+      <input id="firstname" type="text" class="form-control border-spiderman" formControlName="firstname">
     </div>
 
     <div class="form-group mb-3 text-start">
-      <label for="age" class="form-label">Âge :</label>
-      <input id="age" type="number" class="form-control" formControlName="age">
+      <label for="age" class="form-label text-spiderman">Âge :</label>
+      <input id="age" type="number" class="form-control border-spiderman" formControlName="age">
     </div>
 
     <div class="form-check mb-3 text-start">
-      <input id="hide" type="checkbox" class="form-check-input" (change)="clickToHide($event)">
-      <label for="hide" class="form-check-label">Hide email</label>
+      <input id="hide" type="checkbox" class="form-check-input border-spiderman" (change)="clickToHide($event)">
+      <label for="hide" class="form-check-label text-spiderman">Hide email</label>
     </div>
 
     @if (!isChecked) {
       <div class="form-group mb-3 text-start">
-        <label for="email" class="form-label">Email :</label>
-        <input id="email" type="email" class="form-control" formControlName="email">
+        <label for="email" class="form-label text-spiderman">Email :</label>
+        <input id="email" type="email" class="form-control border-spiderman" formControlName="email">
       </div>
     }
 
     <div class="form-group mb-3 text-start">
-      <label for="comment" class="form-label">Commentaire :</label>
-      <textarea id="comment" class="form-control" formControlName="comment" rows="3"></textarea>
+      <label for="comment" class="form-label text-spiderman">Commentaire :</label>
+      <textarea id="comment" class="form-control border-spiderman" formControlName="comment" rows="3"></textarea>
     </div>
 
-    <button type="submit" routerLink="acceuil" class="btn btn-primary w-100" (click)="onSubmit()" [disabled]="!contactForm.valid">
-      ENVOYER
+    <button type="submit" routerLink="acceuil"
+            class="btn btn-spiderman w-100 fw-bold shadow"
+            (click)="onSubmit()" [disabled]="!contactForm.valid">
+      ENVOYER 🕸️
     </button>
 
   </form>
